@@ -61,7 +61,7 @@ def display():
     # [!] Then we need to resize the image to fit within the window
 
 
-def inc():
+def inc(event):
     # incriment the current index to +1,
     # looping back to 0 if over, then
     # calling update()
@@ -74,7 +74,7 @@ def inc():
     display()
 
 
-def dec():
+def dec(event):
     # incriment the current index to -1,
     # looping back to max if under, then
     # calling update()
@@ -86,13 +86,18 @@ def dec():
         Index -= 1
     display()
 
-
-B = Button(frame, text =">", command = inc)
-B.pack()
-
-C = Button(frame, text ="<", command = dec)
-C.pack()
+def refresh(event):
+    display()
+    # print('refreshed')
 
 
+# Bind the Right and Left arrow keys
+# to the inc and dec functions
+window.bind('<Right>', inc)
+window.bind('<Left>', dec)
+# Bind R to refresh display
+window.bind('<r>', refresh)
+# Init first display update
 display()
+# Run the loop
 window.mainloop()
