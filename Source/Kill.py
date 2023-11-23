@@ -17,38 +17,39 @@ frame.pack()
 frame.place(anchor='center', relx=0.5, rely=0.5)
 
 
-
+# Open file:
 # x = filedialog.askopenfilename()
-x = 'C:/Users/nitro/Documents/GitHub/image-viewer/crab.png'
-head, tail = os.path.split(x)
+# for testing:
+x = 'C:/Users/nitro/Documents/GitHub/image-viewer/Test images/crab.png'
+# head, tail = os.path.split(x)
 
-# Open the image used to launch the program,
-# then gather the surrounding images in the
-# same directory. Max of 50 images though.
-OpenedImage = tail
-Directory = head
-SurroundingImages = []
-Index = 0
-i = 0
-for file in os.listdir(Directory):
-    # Max of 50 because I'm not sure
-    # how many images would bust the
-    # program; just being safe.
-    if i < 50:
-        # this check ensures we
-        # are not including folders
-        # in our surrounding images
-        if os.path.isfile(file):
-            # now we are looking for just image files
-            for format in ['png', 'jpg', 'jpeg', 'bmp']:
-                if file.lower().endswith(format):
-                    z = os.path.join(Directory, file)
-                    SurroundingImages.append(z)
-                    if file == tail:
-                        # Now set the index of where we are to the original image
-                        Index = i
-i += 1
-# I hate this loop so much, but that's how I got this working. I'll make it better.
+# # Open the image used to launch the program,
+# # then gather the surrounding images in the
+# # same directory. Max of 50 images though.
+# OpenedImage = tail
+# Directory = head
+# SurroundingImages = []
+# Index = 0
+# i = 0
+# for file in os.listdir(Directory):
+#     # Max of 50 because I'm not sure
+#     # how many images would bust the
+#     # program; just being safe.
+#     if i < 50:
+#         # this check ensures we
+#         # are not including folders
+#         # in our surrounding images
+#         if os.path.isfile(file):
+#             # now we are looking for just image files
+#             for format in ['png', 'jpg', 'jpeg', 'bmp']:
+#                 if file.lower().endswith(format):
+#                     z = os.path.join(Directory, file)
+#                     SurroundingImages.append(z)
+#                     if file == tail:
+#                         # Now set the index of where we are to the original image
+#                         Index = i
+# i += 1
+# # I hate this loop so much, but that's how I got this working. I'll make it better.
 
 
 # Create the image frame
@@ -57,7 +58,7 @@ i += 1
 # but I can't think of
 # any other way to go
 window.title('Imager')
-image = ImageTk.PhotoImage(Image.open(SurroundingImages[Index]))
+image = ImageTk.PhotoImage(Image.open(x))
 label = Label(frame, image = image)
 label.pack()
 
