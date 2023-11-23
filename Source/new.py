@@ -11,18 +11,22 @@ display = Label(window, image=None)
 display.pack(anchor='center', expand=True)
 
 
-# Test
 current_file = "C:/Users/nitro/Documents/GitHub/image-viewer/Test Images/crab.png"
 current_image = ImageTk.PhotoImage(Image.open(current_file))
 
 
 def update():
+    global current_file
+    global current_image
     window.title(current_file)
+    current_image = ImageTk.PhotoImage(Image.open(current_file))
     display.configure(image=current_image)
 
 
 def open_folder(event):
-    print('opening!')
+    global current_file
+    current_file = filedialog.askopenfilename()
+    update()
 
 
 def nxt(event):
@@ -34,7 +38,6 @@ def prv(event):
 
 
 def refresh(event):
-    print('refreshing!')
     update()
 
 
