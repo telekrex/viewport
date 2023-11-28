@@ -10,6 +10,9 @@ window.geometry(size)
 display = Label(window, image=None)
 display.pack(anchor='center', expand=True)
 
+# To settle this open first image dispute, I'll just have to create a blank image,
+# and have this part of the program get current working directory, use that path
+# and image, then load that, and just wait for the user to press O.
 
 current_file = "C:/Users/nitro/Documents/GitHub/image-viewer/Test Images/crab.png"
 current_image = ImageTk.PhotoImage(Image.open(current_file))
@@ -37,15 +40,39 @@ def neat_name(file_path):
     return tail
 
 
+def resized_image(original_size, limit_x, limit_y):
+    # Unpack original size
+    original_x, original_y = original_size
+
+    # Calculate new size while maintaining aspect ratio
+    if original_x <= limit_x and original_y <= limit_y:
+        # Image already within limits
+        new_size = (original_x, original_y)
+    else:
+        # Calculate new size with the same aspect ratio
+        ratio = min(limit_x / original_x, limit_y / original_y)
+        new_size = (int(original_x * ratio), int(original_y * ratio))
+
+    return new_size
+
+
 def update():
     try:
         global current_image # we need this global
         current_file = all_files[current_file_index]
         window.title(neat_name(current_file))
-        current_image = ImageTk.PhotoImage(Image.open(current_file))
+        # open image
+        x = Image.open(current_file)
+        # resize image to fit window
+        zscale = resized_image((x.size), window.winfo_width(), window.winfo_height())        
+        r = x.resize(zscale)
+        # load that image as a ImageTk.PhotoImage
+        current_image = ImageTk.PhotoImage(r)
+        # current_image = ImageTk.PhotoImage(Image.open(current_file))
         display.configure(image=current_image)
-    except:
+    except Exception as e:
         print('Failed to load any image files')
+        print(e)
         display.configure(image=None)
 
 
@@ -54,8 +81,9 @@ def open_folder(event):
     global all_files
     global current_file_index
     current_file = filedialog.askopenfilename()
-    all_files, current_file_index = grab_files(current_file)
-    update()
+    if current_file:
+        all_files, current_file_index = grab_files(current_file)
+        update()
 
 
 def nxt(event):
@@ -86,5 +114,8 @@ window.bind('<o>', open_folder)
 window.bind('<Right>', nxt)
 window.bind('<Left>', prv)
 window.bind('<r>', refresh)
+window.bind('<Configure>', refresh) # This event gets called upon moving location or resizing window,
+# so the refreshing is happening constantly -- this is a performance issue. But not one I really know
+# how to fix at the moment.
 update()
 window.mainloop()
