@@ -1,2 +1,2 @@
 cd Source
-python -m PyInstaller --onefile Viewfinder.py -n Viewfinder
+python -m PyInstaller --noconsole --onefile Viewfinder.py -n Viewfinder
