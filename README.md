@@ -1,12 +1,10 @@
 # Viewfinder
-
-Viewfinder
-Version 1 Built November 28 2023
+Version 2 Built May 28 2024
 © Copyleft by Thorn-Eater
 
 ```
-< Previous image in folder
-> Next image in folder
-O open an image
-R refresh
+< Prev file in folder
+> Next file in folder
+O Open a file
+R Refresh
 ```

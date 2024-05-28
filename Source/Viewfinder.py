@@ -14,7 +14,7 @@ display.pack(anchor='center', expand=True)
 # and have this part of the program get current working directory, use that path
 # and image, then load that, and just wait for the user to press O.
 
-current_file = "C:/Users/nitro/Documents/GitHub/image-viewer/Test Images/crab.png"
+current_file = "crab.png"
 current_image = ImageTk.PhotoImage(Image.open(current_file))
 all_files = [current_file]
 current_file_index = 0
@@ -37,7 +37,7 @@ def neat_name(file_path):
     head, tail = os.path.split(file_path)
     for format in ['.png', '.jpg', '.jpeg', '.bmp', '.tif', '.gif', '.webp']:
         tail = str(tail.replace(format, ''))
-    return tail
+    return tail[:30]
 
 
 def resized_image(original_size, limit_x, limit_y):
