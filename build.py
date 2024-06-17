@@ -1,13 +1,6 @@
-# Build and package Viewfinder for public release
+# Build and package for public release
+import sys, os
 
-import sys
-
-
-### Build from source
-# `cd Source`  
-# `pip3 install -r Source/.packages`  
-# (on linux) `sudo apt-get install python3-tk`
-# `python3 -m PyInstaller --noconsole --onefile Viewfinder.py -n Viewfinder`
 # copy over completed files
 # delete temp files
 
@@ -21,4 +14,12 @@ if __name__ == "__main__":
     print(f'Building for target: {target}')
     
     if target == 'windows':
-        print()
+        os.system('cd Source')
+        os.system('pip install -r .packages')
+        os.system('python -m PyInstaller --noconsole --onefile Viewfinder.py -n Viewfinder')
+    
+    if target == 'linux':
+        os.system('cd Source')
+        os.system('pip3 install -r .packages')
+        os.system('sudo apt-get install python3-tk -y')
+        os.system('python3 -m PyInstaller --noconsole --onefile Viewfinder.py -n Viewfinder')

@@ -2,6 +2,7 @@ import sys, os
 from tkinter import *
 from tkinter import filedialog
 from PIL import ImageTk, Image
+from random import randrange
 window = Tk()
 width = window.winfo_screenwidth() * .6
 height = window.winfo_screenheight() * .6
@@ -86,6 +87,13 @@ def open_folder(event):
         update()
 
 
+def shuffle(event):
+    global current_file_index
+    global all_files
+    current_file_index = randrange(len(all_files)-1)
+    update()
+
+
 def nxt(event):
     global current_file_index
     global all_files
@@ -111,7 +119,12 @@ def refresh(event):
 
 
 window.bind('<o>', open_folder)
+window.bind('<s>', shuffle)
 window.bind('<Right>', nxt)
+window.bind('<d>', nxt)
+window.bind('<.>', nxt)
+window.bind('<,>', prv)
+window.bind('<a>', prv)
 window.bind('<Left>', prv)
 window.bind('<r>', refresh)
 window.bind('<Configure>', refresh) # This event gets called upon moving location or resizing window,
