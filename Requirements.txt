@@ -1,2 +1,0 @@
-tkinter
-Pillow==10.1.0
