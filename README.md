@@ -1,4 +1,3 @@
-<h1 align=center>Viewfinder</h1>
 <p align=center>Minimal image viewer</p>
 <p align=center>
   <img src="Screenshot.png" />
