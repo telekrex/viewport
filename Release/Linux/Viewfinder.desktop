@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Viewfinder
+GenericName=Viewfinder
+Comment=Minimal image viewer
+Path=/home/Viewfinder
+Exec=/home/Viewfinder/Viewfinder
+Icon=/home/Viewfinder/Icon.png
+Terminal=false

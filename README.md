@@ -1,7 +1,7 @@
 <h1 align=center>Viewfinder</h1>
-<p align=center>A minimal image viewer</p>
+<p align=center>Minimal image viewer</p>
 <p align=center>
-  <img src="screenshot.png" />
+  <img src="Screenshot.png" />
 </p>
 
 ### Install for Windows
@@ -14,7 +14,7 @@
 1. Download [Viewfinder for Linux]()
 2. Extract to a location of your choice
 3. Enable executable permissions on `Viewfinder`
-4. Optionally, move or copy `Viewfinder.desktop` to your applications directory.  
+4. Optionally, make any modifications you'd like to `Viewfinder.desktop` and copy it to your applications directory.  
 - Run `Viewfinder` to use the software.
 
 ### How to use
