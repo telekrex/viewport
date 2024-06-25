@@ -15,7 +15,7 @@ display.pack(anchor='center', expand=True)
 # and have this part of the program get current working directory, use that path
 # and image, then load that, and just wait for the user to press O.
 
-current_file = "crab.png"
+current_file = "NoImage.png"
 current_image = ImageTk.PhotoImage(Image.open(current_file))
 all_files = [current_file]
 current_file_index = 0

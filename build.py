@@ -20,6 +20,9 @@ if __name__ == "__main__":
         os.system('copy "%~dp0\Screenshot.png" "%~dp0\Release\Linux"')
         os.system('copy "%~dp0\Icon.png" "%~dp0\Release\Windows"')
         os.system('copy "%~dp0\Icon.png" "%~dp0\Release\Linux"')
+        print('Copying assets...')
+        os.system('copy "%~dp0\Source\NoImage.png" "%~dp0\Release\Windows"')
+        os.system('copy "%~dp0\Source\NoImage.png" "%~dp0\Release\Linux"')
         print('Doc build complete')
 
     if target == 'windows':
