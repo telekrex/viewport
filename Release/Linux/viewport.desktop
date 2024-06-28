@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=viewport
+GenericName=viewport
+Comment=minimal image viewer
+Path=/home/viewport
+Exec=/home/viewport/viewport
+Icon=/home/viewport/Icon.png
+Terminal=false

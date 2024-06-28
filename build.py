@@ -23,14 +23,16 @@ if __name__ == "__main__":
         os.system('pandoc README.md -f markdown -t html -s -o Release/Windows/README.html --metadata title="viewport"')
         os.system('pandoc README.md -f markdown -t html -s -o Release/Linux/README.html --metadata title="viewport"')
         print('Copying assets...')
-        os.system('copy "%~dp0\Screenshot.png" "%~dp0\Release\Windows"')
-        os.system('copy "%~dp0\Screenshot.png" "%~dp0\Release\Linux"')
-        os.system('copy "%~dp0\Source\icon.png" "%~dp0\Release\Windows"')
-        os.system('copy "%~dp0\Source\icon.png" "%~dp0\Release\Linux"')
-        os.system('copy "%~dp0\Source\icon.ico" "%~dp0\Release\Windows"')
-        os.system('copy "%~dp0\Source\icon.ico" "%~dp0\Release\Linux"')
-        os.system('copy "%~dp0\Source\NoImage.png" "%~dp0\Release\Windows"')
-        os.system('copy "%~dp0\Source\NoImage.png" "%~dp0\Release\Linux"')
+        # [!] these following commands dont work for some reason,
+        # but we only really needed to copy them once.
+        # os.system('copy "%~dp0\Screenshot.png" "%~dp0\Release\Windows"')
+        # os.system('copy "%~dp0\Screenshot.png" "%~dp0\Release\Linux"')
+        # os.system('copy "%~dp0\Source\icon.png" "%~dp0\Release\Windows"')
+        # os.system('copy "%~dp0\Source\icon.png" "%~dp0\Release\Linux"')
+        # os.system('copy "%~dp0\Source\icon.ico" "%~dp0\Release\Windows"')
+        # os.system('copy "%~dp0\Source\icon.ico" "%~dp0\Release\Linux"')
+        # os.system('copy "%~dp0\Source\NoImage.png" "%~dp0\Release\Windows"')
+        # os.system('copy "%~dp0\Source\NoImage.png" "%~dp0\Release\Linux"')
         print('Doc build complete')
 
     if target == 'windows':
@@ -39,7 +41,7 @@ if __name__ == "__main__":
         print('Making sure packages are installed...')
         os.system('pip install -r .packages')
         print('Running PyInstaller...')
-        os.system('python -m PyInstaller --noconsole --onefile viewport.py -n viewport --distpath ../Release/Windows')
+        os.system('python -m PyInstaller --noconsole --onefile viewport.py -n viewport --icon=icon.ico')
         print('Windows build complete')
     
     if target == 'linux':

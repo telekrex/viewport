@@ -26,4 +26,4 @@ Supported formats: `.png`, `.jpg`, `.jpeg`, `.bmp`, `.tif`, `.webp`
 
 ---
 <p align=center>developed by Andropunk Software</p>
-<p align=center>started Nov 20, 2023 --> V2 released May 28, 2024</p>
+<p align=center>started Nov 20, 2023 --> V3 released June 28, 2024</p>
