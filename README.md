@@ -4,13 +4,13 @@
 </p>
 
 ### Install for Windows
-1. Download [viewport for Windows]()
+1. Download [viewport for Windows](https://andropunks-secret-stash.netlify.app/software/viewport/viewport.V3.Windows.zip)
 2. Extract to a location of your choice
 3. Optionally, create desired shortcuts, pins, etc.
 - Run `viewport.exe` to use the software.
 
 ### Install for Linux
-1. Download [viewport for Linux]()
+1. Download [viewport for Linux](https://andropunks-secret-stash.netlify.app/software/viewport/viewport.V3.Linux.zip)
 2. Extract to a location of your choice
 3. Enable executable permissions on `viewport`
 4. Optionally, make any modifications you'd like to `viewport.desktop` and copy it to your applications directory.  

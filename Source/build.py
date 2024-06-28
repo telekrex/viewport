@@ -20,8 +20,8 @@ if __name__ == "__main__":
         # assets as you can see go to both folders.
         print('--> Building documentation')
         print('Building README...')
-        os.system('pandoc README.md -f markdown -t html -s -o Release/Windows/README.html --metadata title="viewport"')
-        os.system('pandoc README.md -f markdown -t html -s -o Release/Linux/README.html --metadata title="viewport"')
+        os.system('pandoc ../README.md -f markdown -t html -s -o ../Release/Windows/README.html --metadata title="viewport"')
+        os.system('pandoc ../README.md -f markdown -t html -s -o ../Release/Linux/README.html --metadata title="viewport"')
         print('Copying assets...')
         # [!] these following commands dont work for some reason,
         # but we only really needed to copy them once.
