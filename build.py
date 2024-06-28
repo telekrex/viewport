@@ -11,16 +11,24 @@ if __name__ == "__main__":
     target = sys.argv[1]
 
     if target == 'docs':
+        # [!] It is intended to run docs
+        # build on Windows -- reason is
+        # because of the path formats,
+        # I am too lazy to write different
+        # versions. Just run docs and windows
+        # together during build process -- the
+        # assets as you can see go to both folders.
         print('--> Building documentation')
         print('Building README...')
         os.system('pandoc README.md -f markdown -t html -s -o Release/Windows/README.html --metadata title="Viewfinder"')
         os.system('pandoc README.md -f markdown -t html -s -o Release/Linux/README.html --metadata title="Viewfinder"')
-        print('Copying images...')
+        print('Copying assets...')
         os.system('copy "%~dp0\Screenshot.png" "%~dp0\Release\Windows"')
         os.system('copy "%~dp0\Screenshot.png" "%~dp0\Release\Linux"')
-        os.system('copy "%~dp0\Icon.png" "%~dp0\Release\Windows"')
-        os.system('copy "%~dp0\Icon.png" "%~dp0\Release\Linux"')
-        print('Copying assets...')
+        os.system('copy "%~dp0\Source\icon.png" "%~dp0\Release\Windows"')
+        os.system('copy "%~dp0\Source\icon.png" "%~dp0\Release\Linux"')
+        os.system('copy "%~dp0\Source\icon.ico" "%~dp0\Release\Windows"')
+        os.system('copy "%~dp0\Source\icon.ico" "%~dp0\Release\Linux"')
         os.system('copy "%~dp0\Source\NoImage.png" "%~dp0\Release\Windows"')
         os.system('copy "%~dp0\Source\NoImage.png" "%~dp0\Release\Linux"')
         print('Doc build complete')

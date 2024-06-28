@@ -8,6 +8,7 @@ width = window.winfo_screenwidth() * .6
 height = window.winfo_screenheight() * .6
 size = f'{round(width)}x{round(height)}'
 window.geometry(size)
+# window.configure(background='white')
 display = Label(window, image=None)
 display.pack(anchor='center', expand=True)
 
@@ -131,4 +132,5 @@ window.bind('<Configure>', refresh) # This event gets called upon moving locatio
 # so the refreshing is happening constantly -- this is a performance issue. But not one I really know
 # how to fix at the moment.
 update()
+window.iconbitmap('icon.ico')
 window.mainloop()
