@@ -4,6 +4,7 @@ from tkinter import filedialog
 from PIL import ImageTk, Image
 from random import randrange
 window = Tk()
+window.iconbitmap('icon.ico')
 width = window.winfo_screenwidth() * .6
 height = window.winfo_screenheight() * .6
 size = f'{round(width)}x{round(height)}'
@@ -132,5 +133,4 @@ window.bind('<Configure>', refresh) # This event gets called upon moving locatio
 # so the refreshing is happening constantly -- this is a performance issue. But not one I really know
 # how to fix at the moment.
 update()
-window.iconbitmap('icon.ico')
 window.mainloop()
