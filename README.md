@@ -17,9 +17,9 @@ Optionally, you can build the application from source yourself.
 2. Windows build: `python -m PyInstaller --noconsole --onefile viewport.py -n Viewport`
 2. Linux build: `python3 -m PyInstaller --noconsole --onefile viewport.py -n Viewport`
 
-The resulting binary will be in `/dist`.
+The resulting binary will be in `/dist`. You will need to add a copy of `NoImage.png` and  `icon.ico` to that folder.
 
-> Note: the icon asssets in this repository and in the build do not quite work. It's an issue with PyInstaller and I have tried fixing it and it seems to be sortof randomly works sometimes, sometimes doesn't. This project is nearly done and this, I don't have the patience to fix. So if you want to tinker with that on your own go for it.
+> Note: the icon asssets in this repository and in the build do not quite work. If you want to tinker with that on your own go for it.
 
 ### How to use
 To open a file, press `O`; all pictures in the same folder will be brought with it.  
