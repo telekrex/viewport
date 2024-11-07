@@ -1,3 +1,5 @@
+# Written by telekrex
+
 import sys, os
 from tkinter import *
 from tkinter import filedialog
@@ -17,36 +19,32 @@ display.pack(anchor='center', expand=True)
 # and have this part of the program get current working directory, use that path
 # and image, then load that, and just wait for the user to press O.
 
-current_file = "NoImage.png"
+current_file = ''.join(sys.argv[1:]) if len(sys.argv) > 1 else "NoImage.png"
 current_image = ImageTk.PhotoImage(Image.open(current_file))
 all_files = [current_file]
 current_file_index = 0
-
 
 def grab_files(from_path):
     head, tail = os.path.split(from_path)
     folder = str(head)
     files = []
     for item in os.listdir(folder):
-        for format in ['.png', '.jpg', '.jpeg', '.bmp', '.tif', '.gif', '.webp']:
+        for format in ['.png', '.jpg', '.jpeg', '.bmp', '.tif', '.webp']:
             if item.endswith(format):
                 item_path = folder + '/' + item
                 files.append(item_path)
     print(files)
     return files, files.index(from_path)
 
-
 def neat_name(file_path):
     head, tail = os.path.split(file_path)
     for format in ['.png', '.jpg', '.jpeg', '.bmp', '.tif', '.gif', '.webp']:
         tail = str(tail.replace(format, ''))
-    return tail[:30]
-
+    return tail[:80]
 
 def resized_image(original_size, limit_x, limit_y):
     # Unpack original size
     original_x, original_y = original_size
-
     # Calculate new size while maintaining aspect ratio
     if original_x <= limit_x and original_y <= limit_y:
         # Image already within limits
@@ -55,9 +53,7 @@ def resized_image(original_size, limit_x, limit_y):
         # Calculate new size with the same aspect ratio
         ratio = min(limit_x / original_x, limit_y / original_y)
         new_size = (int(original_x * ratio), int(original_y * ratio))
-
     return new_size
-
 
 def update():
     try:
@@ -78,7 +74,6 @@ def update():
         print(e)
         display.configure(image=None)
 
-
 def open_folder(event):
     global current_file
     global all_files
@@ -88,13 +83,11 @@ def open_folder(event):
         all_files, current_file_index = grab_files(current_file)
         update()
 
-
 def shuffle(event):
     global current_file_index
     global all_files
     current_file_index = randrange(len(all_files)-1)
     update()
-
 
 def nxt(event):
     global current_file_index
@@ -105,7 +98,6 @@ def nxt(event):
         current_file_index = 0
     update()
 
-
 def prv(event):
     global current_file_index
     global all_files
@@ -115,17 +107,13 @@ def prv(event):
         current_file_index -= 1
     update()
 
-
 def refresh(event):
     update()
-
 
 window.bind('<o>', open_folder)
 window.bind('<s>', shuffle)
 window.bind('<Right>', nxt)
 window.bind('<d>', nxt)
-# window.bind('<.>', nxt)
-# window.bind('<,>', prv)
 window.bind('<a>', prv)
 window.bind('<Left>', prv)
 window.bind('<r>', refresh)
