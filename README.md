@@ -19,7 +19,7 @@ Optionally, you can build the application from source yourself.
 
 The resulting binary will be in `/dist`.
 
-> Note: the icon asssets in this repository and in the build do not quite work. It's an issue with PyInstaller and I have tried fixing it and it seems to be sortof randomly works sometimes, sometimes doesn't. This project is nearly done and this, I don't have the patience to fix. So if you want to tinker with that on your installation go for it.
+> Note: the icon asssets in this repository and in the build do not quite work. It's an issue with PyInstaller and I have tried fixing it and it seems to be sortof randomly works sometimes, sometimes doesn't. This project is nearly done and this, I don't have the patience to fix. So if you want to tinker with that on your own go for it.
 
 ### How to use
 To open a file, press `O`; all pictures in the same folder will be brought with it.  
