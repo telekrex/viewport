@@ -9,13 +9,14 @@ Viewport is a barebones image viewer program for when you want to view only, in 
 ### Installation
 1. Download for Windows or Linux from the [releases](https://github.com/telekrex/viewport/releases) page.
 2. Extract the .zip and place the application folder where you want it.
-3. Run `Viewport.exe`/`Viewport` from in the folder and enjoy. Create shortcuts or desktop files as needed.
+3. Run `Viewport.exe`/`Viewport` and enjoy. Create shortcuts or desktop files as needed.
 
 Optionally, you can build the application from source yourself.
 1. Run `pip install -r .packages` to install dependencies. (`pip3` if on Linux)
 1. (If on Linux) you may need to separately install Tk. Run `sudo apt-get install python3-tk -y`
 2. Windows build: `python -m PyInstaller --noconsole --onefile viewport.py -n Viewport`
 2. Linux build: `python3 -m PyInstaller --noconsole --onefile viewport.py -n Viewport`
+
 The resulting binary will be in `/dist`.
 
 > Note: the icon asssets in this repository and in the build do not quite work. It's an issue with PyInstaller and I have tried fixing it and it seems to be sortof randomly works sometimes, sometimes doesn't. This project is nearly done and this, I don't have the patience to fix. So if you want to tinker with that on your installation go for it.
