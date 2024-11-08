@@ -4,12 +4,12 @@
   <img src="Screenshot.png" width=480/>
 </p>
 
-Viewport is a barebones image viewer program for when you want to view only, in a simple way, a folder of pictures. Downloadable for Windows, Mac and Linux version can be built from source.
+Viewport is a barebones image viewer program for when you want to view only, in a simple way, a folder of pictures. Downloadable exe for Windows, Mac and Linux versions can be built from source.
 
 ### Installation
 1. Download for Windows from the [releases](https://github.com/telekrex/viewport/releases) page.
-2. Extract the .zip and place the application folder where you want it.
-3. Run `Viewport.exe` and enjoy. Create shortcuts as needed.
+2. Extract the .zip and place it where you want it.
+3. Run `Viewport.exe`.
 
 Optionally, you can build the application from source yourself.
 1. Run `pip install -r .packages` to install dependencies. (`pip3` if on Linux)
