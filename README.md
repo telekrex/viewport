@@ -4,7 +4,7 @@
   <img src="Screenshot.png" width=480/>
 </p>
 
-Viewport is a barebones image viewer program for when you want to view only, in a simple way, a folder of pictures. Downloadable for Windows and Linux. If you want it on Mac, you can probably build it from the source code.
+Viewport is a barebones image viewer program for when you want to view only, in a simple way, a folder of pictures. Downloadable for Windows, Mac and Linux version can be built from source.
 
 ### Installation
 1. Download for Windows from the [releases](https://github.com/telekrex/viewport/releases) page.
