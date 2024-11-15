@@ -6,7 +6,10 @@ from tkinter import filedialog
 from PIL import ImageTk, Image
 from random import randrange
 window = Tk()
-window.iconbitmap('icon.ico')
+try:
+    window.iconbitmap('icon.ico')
+except:
+    pass
 width = window.winfo_screenwidth() * .6
 height = window.winfo_screenheight() * .6
 size = f'{round(width)}x{round(height)}'
