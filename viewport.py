@@ -7,10 +7,13 @@ from PIL import ImageTk, Image
 from random import randrange
 window = Tk()
 try:
-    icon_path = os.path.abspath(__file__).replace('viewport.py', 'icon.ico')
+    icon_path = os.path.abspath(__file__)
+    icon_path = icon_path.replace('viewport.py', 'icon.ico')
+    icon_path = icon_path.replace('Viewport.exe', 'icon.ico')
     window.iconbitmap(icon_path)
-except:
+except Exception as z:
     print('Failed to load icon from path')
+    print(z)
     pass
 width = window.winfo_screenwidth() * .6
 height = window.winfo_screenheight() * .6
