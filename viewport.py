@@ -7,8 +7,10 @@ from PIL import ImageTk, Image
 from random import randrange
 window = Tk()
 try:
-    window.iconbitmap('icon.ico')
+    icon_path = os.path.abspath(__file__).replace('viewport.py', 'icon.ico')
+    window.iconbitmap(icon_path)
 except:
+    print('Failed to load icon from path')
     pass
 width = window.winfo_screenwidth() * .6
 height = window.winfo_screenheight() * .6
@@ -70,12 +72,10 @@ def update():
         r = x.resize(zscale)
         # load that image as a ImageTk.PhotoImage
         current_image = ImageTk.PhotoImage(r)
-        # current_image = ImageTk.PhotoImage(Image.open(current_file))
         display.configure(image=current_image)
     except Exception as e:
         print('Failed to load any image files')
         print(e)
-        display.configure(image=None)
 
 def open_folder(event):
     global current_file
