@@ -70,7 +70,7 @@ def update():
         global current_image # we need this global
         global x
         current_file = all_files[current_file_index]
-        window.title(neat_name(current_file))
+        # window.title(neat_name(current_file))
         # open image
         x = Image.open(current_file)
         # resize image to fit window

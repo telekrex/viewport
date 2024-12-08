@@ -37,12 +37,47 @@ display = Label(app, image=None)
 display.pack(anchor='center', expand=True)
 
 
+# image.open takes roughly 0.3 seconds
+
+import time
+
+
+current_file = "imageset/leopard_sunlight.jpg"
+
+start = time.time()
+current_image = ImageTk.PhotoImage(Image.open(current_file))
+end = time.time()
+
+print('Image open time')
+print(end - start)
+
+
+def ideal_size(original, limit_x, limit_y):
+    # unpack original (tuple) into x and y
+    original_x, original_y = original
+    # if the original is already within limits,
+    if original_x <= limit_x and original_y <= limit_y:
+        # new size stays the same as original
+        return (original_x, original_y)
+    else:
+        # calculate new size with the same aspect ratio
+        ratio = min(limit_x / original_x, limit_y / original_y)
+        return (int(original_x * ratio), int(original_y * ratio))
+
+
+# opened_image = Image.open(current_file)
+# resize_size = ideal_size(opened_image.size, app.winfo_width(), app.winfo_height())
+# resized_image = opened_image.resize(resize_size)
+# current_image = ImageTk.PhotoImage(resized_image)
+display.configure(image=current_image)
+
+
 
 def open_image(event):
     pass
 
 def update_size(event):
-    print('resizing...')
+    pass
 
 def navigate_next(event):
     pass
