@@ -36,20 +36,20 @@ display = Label(app, image=None)
 # then pack this element
 display.pack(anchor='center', expand=True)
 
+current_file = "imageset/reportoftheweek.png"
+
+
+
 
 # image.open takes roughly 0.3 seconds
 
 import time
-
-
-current_file = "imageset/leopard_sunlight.jpg"
-
 start = time.time()
 current_image = ImageTk.PhotoImage(Image.open(current_file))
 end = time.time()
-
 print('Image open time')
 print(end - start)
+display.configure(image=current_image)
 
 
 def ideal_size(original, limit_x, limit_y):
@@ -65,10 +65,18 @@ def ideal_size(original, limit_x, limit_y):
         return (int(original_x * ratio), int(original_y * ratio))
 
 
-# opened_image = Image.open(current_file)
-# resize_size = ideal_size(opened_image.size, app.winfo_width(), app.winfo_height())
-# resized_image = opened_image.resize(resize_size)
-# current_image = ImageTk.PhotoImage(resized_image)
+
+opened_image = Image.open(current_file)
+start = time.time()
+resize_size = ideal_size(opened_image.size, app.winfo_width(), app.winfo_height())
+resized_image = opened_image.resize(resize_size)
+current_image = ImageTk.PhotoImage(resized_image)
+end = time.time()
+
+print('resize time')
+print(end - start)
+
+
 display.configure(image=current_image)
 
 
