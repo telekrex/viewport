@@ -3,5 +3,16 @@ Image viewer
 Complete
 Software
 
-Plenty of improvements to make but for now it's done.
-Look into comments, there's a "find" feature that could be nice to have.
+
+
+Issues/Bugs:
+- Viewport can't open WEBP even though that's a listed format, which if its the OS opener for, bad
+- .gifs open but don't animate
+- Could technically still take the image load on resize fix from the other version and get a perf boost
+- Viewports idea of next/prev is based on Alphabetical I thnk, which is unrespective of any way you may have had the files sorted in Explorer
+- Opening a .gif or file not in list crashes program. intended mostly but could be handled more gracefully
+
+Thoughts/additions:
+- Do the libraries support .avif? could we add that?
+- Hotkey to copy or cut current file to clipboard
+- Look into comments, there's a "find" feature that could be nice to have along with copy
