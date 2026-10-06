@@ -1,2 +1,2 @@
 # Contributing
-Viewport was made because I wanted sifting through folders of images to be faster on Windows. I think we can all agree there's nothing revolutionary about that, so this repository is a modest host of files rather than a devOps site. Viewport is open source, but the scope is tiny. Suggestions will be looked at, but I cannot guarantee much. You are welcome to develop your own fork :)
+The scope is tiny. Use the issue tracker. Suggestions will be looked at, but I cannot guarantee adoption. You are welcome to develop your own fork :)
