@@ -1,18 +1,14 @@
 VIEWPORT
 Image viewer
-Complete
+Dormant
 Software
 
-
-
-Issues/Bugs:
-- Viewport can't open WEBP even though that's a listed format, which if its the OS opener for, bad
-- .gifs open but don't animate
-- Could technically still take the image load on resize fix from the other version and get a perf boost
-- Viewports idea of next/prev is based on Alphabetical I thnk, which is unrespective of any way you may have had the files sorted in Explorer
-- Opening a .gif or file not in list crashes program. intended mostly but could be handled more gracefully
-
-Thoughts/additions:
-- Do the libraries support .avif? could we add that?
-- Hotkey to copy or cut current file to clipboard
-- Look into comments, there's a "find" feature that could be nice to have along with copy
+Issues, bugs, thoughts (for later if I do more with this):
+JPG support (include in file open order?)
+WEBP support (or just remove from list if not possible)
+GIF support (or just remove from list if not possible)
+Changes to file format support needs to be updated then in the inno installer
+Do the libraries support .avif? could we add that?
+New feature - Hotkey to copy or cut current file to clipboard
+New feature - Highlight current file in explorer
+Next/prev is based on Alphabetical I thnk, which is unrespective of any way you may have had the files sorted in Explorer
